@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>好贷</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+            list-style: none;
+        }
+        .box{
+            width:325px;
+            height: 401px;
+            background-color:rgba(0,0,0,0.4);
+            padding: 30px 20px;
+        }
+        .box h2{
+            color: white;
+        }
+        .box .con{
+            width:100%;
+            font-size: 12px;
+            color: white;
+            position: relative;
+        }
+        .box .con>p{
+            margin: 10px 0;
+        }
+        .box .con>p span:nth-of-type(1){
+            float: left;
+        }
+        .box .con>p span:nth-of-type(2){
+            float:right;
+        }
+        .con .num{
+            height: 40px;
+            width:100%;
+            background-color: white;
+            color: #666;
+            border-bottom: 1px solid #ccc;
+        }
+        .con .num p{
+            float: left;
+            line-height: 40px;
+        }
+        .con .num p:nth-of-type(1){
+            width:75%;
+            padding: 0 15px;
+            border-right: 1px solid #ccc;
+        }
+        .con .num p:nth-of-type(1) span:nth-of-type(2){
+            float: right;
+        }
+        .con .num p:nth-of-type(2){
+            width:15%;
+            text-align: center;
+        }
+        .con ul{
+            width:100%;
+            position: absolute;
+            left:0;
+            z-index: 200;
+            display: none;
+        }
+        .con ul li{
+            width:100%;
+            height: 30px;
+            line-height: 30px;
+            font-size: 12px;
+            color: #666;
+            background-color: white;
+        }
+        .con ul li:hover{
+            background-color: #C6D6E7;
+        }
+        .clearfix:after{
+            display: block;
+            clear: both;
+            content: '';
+        }
+        .search{
+            width:100%;
+            height:40px;
+            background-color: #0094EF;
+            text-align: center;
+            line-height: 40px;
+            color: white;
+            margin: 15px 0;
+            font-size: 12px;
+        }
+        .smtitle{
+            text-align: center;
+            font-size: 10px;
+            color: #B5C6C6;
+        }
+    </style>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <script src="jquery-1.7.2.js"></script>
+    <script>
+        $(function () {
+            $(".dian").click(function () {
+                $(this).parent().next("ul").css("display","block")
+            })
+            $("ul li").click(function () {
+//                alert($(this).find("span:eq(0)").html())
+//                alert($(this).find("span:eq(1)").html())
+                $(this).parent().prev().find("span:eq(0)").html($(this).find("span:eq(0)").html())
+                $(this).parent().prev().find("span:eq(1)").html($(this).find("span:eq(1)").html())
+                $("ul").css("display","none")
+
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="box">
+        <h2>快速搜索消费贷款</h2>
+        <div class="con">
+            <p class="clearfix"><span>贷款金额：</span><span>不足一万可用小数表示</span></p>
+            <div class="num"><p><span class="sum">30</span><span class="dan">万元</span></p><p class="fa fa-caret-down dian"></p></div>
+            <ul>
+                <li><span>5</span><span>万元</span></li>
+                <li><span>10</span><span>万元</span></li>
+                <li><span>15</span><span>万元</span></li>
+                <li><span>20</span><span>万元</span></li>
+                <li><span>25</span><span>万元</span></li>
+                <li><span>30</span><span>万元</span></li>
+            </ul>
+        </div>
+        <div class="con">
+            <p class="clearfix"><span>贷款期限：</span><span></span></p>
+            <div class="num"><p><span class="sum">18</span><span class="dan">个月</span></p><p class="fa fa-caret-down dian"></p></div>
+            <ul>
+                <li><span>6</span><span>个月</span></li>
+                <li><span>1</span><span>年</span></li>
+                <li><span>18</span><span>个月</span></li>
+                <li><span>2</span><span>年</span></li>
+                <li><span>3</span><span>年</span></li>
+                <li><span>5</span><span>年</span></li>
+                <li><span>10</span><span>年</span></li>
+            </ul>
+        </div>
+        <div class="search">搜索一下</div>
+        <p class="smtitle">
+            9164种信贷产品 2000家银行 1403家小贷公司
+        </p>
+    </div>
+</body>
+</html>
